@@ -75,19 +75,21 @@ int List<T>::size(){
 //Otherwise, return false
 template <class T>
 bool List<T>::empty(){
-  if (mySize == 0)
+  if (start == NULL)
   {
-    return FALSE;
+    return TRUE;
   }
 //make sure u aren't being an idiot
-  else {TRUE}
+  else {return FALSE}
 }
 
 //Create a new node with value, and insert that new node
 //into this list at start
 template <class T>
 void List<T>::insertStart(T value){
+  Node(value);
 
+  next->
 }
 
 //Create a new node with value, and insert that new node
