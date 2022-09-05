@@ -54,9 +54,10 @@ class List{
 }; //end of class interface (you may modify the code below)
 
 //Implement all of the functions below
-//Construct an empty list by initializig this list's instance variables
+//Construct an empty list by initializing this list's instance variables
 template <class T>
 List<T>::List(){
+  start = nullptr;
 }
 
 //Destroy all nodes in this list to prevent memory leaks
@@ -67,24 +68,34 @@ List<T>::~List(){
 //Return the size of this list
 template <class T>
 int List<T>::size(){
+  return mySize;
 }
 
 //Return true if this list is empty
 //Otherwise, return false
 template <class T>
 bool List<T>::empty(){
+  if (mySize == 0)
+  {
+    return FALSE;
+  }
+//make sure u aren't being an idiot
+  else {TRUE}
 }
 
 //Create a new node with value, and insert that new node
 //into this list at start
 template <class T>
 void List<T>::insertStart(T value){
+
 }
 
 //Create a new node with value, and insert that new node
 //into this list at end
 template <class T>
 void List<T>::insertEnd(T value){
+  start->value = value;
+  start->next = NULL;
 }
 
 //Create a new node with value <value>, and insert that new node at position j
