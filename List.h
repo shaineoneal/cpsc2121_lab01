@@ -1,9 +1,9 @@
 /*
- * Name:
- * Date Submitted:
- * Lab Section:
- * Assignment Name:
- */
+* Name:
+* Date Submitted:
+* Lab Section:
+* Assignment Name:
+*/
 
 #pragma once
 
@@ -17,47 +17,48 @@ using namespace std;
 template <class T>
 class List{
 
- private:
-  Node<T> * start; //pointer to the first node in this list
-  int mySize;  //size (or length) of this list
+    private:
+        Node<T> * start; //pointer to the first node in this list
+        int mySize;  //size (or length) of this list
 
- public:
-  List();
-  ~List();
-  int size();
-  bool empty();
-  void insertStart(T);
-  void insertEnd(T);
-  void insertAt(T, int);
-  void removeStart();
-  void removeEnd();
-  void removeAt(int);
-  T getFirst();
-  T getLast();
-  T getAt(int);
-  int find(T);
+    public:
+        List();
+        ~List();
+        int size();
+        bool empty();
+        void insertStart(T);
+        void insertEnd(T);
+        void insertAt(T, int);
+        void removeStart();
+        void removeEnd();
+        void removeAt(int);
+        T getFirst();
+        T getLast();
+        T getAt(int);
+        int find(T);
 
   //Print the name and this list's size and values to stdout
   //This function is already implemented (no need to change it)
-  void print(string name){
-    cout << name << ": ";
-    cout << "size = " << size();
-    cout << ", values = ";
-    Node<T> * iterator = start;
-    while(iterator != nullptr){
-      cout << iterator->value << ' ';
-      iterator = iterator->next;
+    void print(string name){
+        cout << name << ": ";
+        cout << "size = " << size();
+        cout << ", values = ";
+        Node<T> * iterator = start;
+        while(iterator != nullptr){
+            cout << iterator->value << ' ';
+            iterator = iterator->next;
+        }
+        cout << endl;
     }
-    cout << endl;
-  }
-
 }; //end of class interface (you may modify the code below)
 
 //Implement all of the functions below
 //Construct an empty list by initializing this list's instance variables
 template <class T>
 List<T>::List(){
-  start = nullptr;
+  //create an empty list of size 0
+    start = nullptr;
+    mySize = 0;
 }
 
 //Destroy all nodes in this list to prevent memory leaks
@@ -68,36 +69,48 @@ List<T>::~List(){
 //Return the size of this list
 template <class T>
 int List<T>::size(){
-  return mySize;
+    return mySize;
 }
 
 //Return true if this list is empty
 //Otherwise, return false
 template <class T>
 bool List<T>::empty(){
-  if (start == NULL)
-  {
-    return TRUE;
-  }
-//make sure u aren't being an idiot
-  else {return FALSE}
+    if(size() == 0) { return true; }
+
+    else { return false; }
 }
 
 //Create a new node with value, and insert that new node
 //into this list at start
 template <class T>
 void List<T>::insertStart(T value){
-  Node(value);
+    Node<T> * newNode = new Node<T>(value);
 
-  next->
+    newNode->next = start;
+    start = newNode;
+
+    mySize++;
 }
 
 //Create a new node with value, and insert that new node
 //into this list at end
 template <class T>
 void List<T>::insertEnd(T value){
-  start->value = value;
-  start->next = NULL;
+    Node<T> * newNode = new Node<T>(value);
+    Node<T> * i = start;
+
+  //if newNode is first node added
+    if(i == NULL) { i = newNode; }
+
+    else{
+        while(i != NULL && i->next != NULL) {
+            i = i->next;
+        }
+    i->next = newNode;
+    }
+
+    mySize++;
 }
 
 //Create a new node with value <value>, and insert that new node at position j
