@@ -1,8 +1,8 @@
 /*
- * Name:
- * Date Submitted:
- * Lab Section:
- * Assignment Name:
+ * Name: Shaine O'Neal
+ * Date Submitted: 9/15/2022
+ * Lab Section: 004
+ * Assignment Name: Lab 1
  */
 
 #pragma once

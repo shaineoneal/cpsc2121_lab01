@@ -8,14 +8,20 @@ using namespace std;
 
 int main()
 {
-    List<int> list1;
+    List<char> list1;
     
-    list1.insertStart(50);
-    list1.insertEnd(51);
-    
-    list1.print("listprint");
+    char c[] = {'z', 'p', 'r', 'p', 'd', 'a', 'h', 'q', 'o', 'r', 'f', 'r'};
+    for(int i = 0; i < 12; i++){
+        list1.insertEnd(c[i]);
+    }
 
-    cout << "isEmpty? = " << list1.empty() << endl;
+
+    list1.print("list1");
+
+
+    cout << "last? = " << list1.getAt(2) << endl;
+    list1.removeAt(2);
+    cout << "last? = " << list1.getAt(2) << endl;
 
     return 0;
 }
